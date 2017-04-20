@@ -1,0 +1,32 @@
+    git pull upstream master
+# and why not
+    git push
+# then compile
+
+rm -rf build :
+<code>
+
+mkdir build
+cd build
+
+cmake "../../Clementine" \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DENABLE_VISUALISATIONS=OFF \
+    -DENABLE_SPOTIFY_BLOB=OFF \
+    -DENABLE_SKYDRIVE=OFF \
+    -DENABLE_GOOGLE_DRIVE=OFF \
+    -DENABLE_DROPBOX=OFF \
+    -DENABLE_UBUNTU_ONE=OFF \
+    -DENABLE_LIBGPOD=OFF \
+    -DENABLE_WIIMOTEDEV=OFF \
+    -DENABLE_SPARKLE=OFF \
+    -DENABLE_LIBMTP=OFF \
+    -DENABLE_GIO=ON \
+    -DENABLE_BOX=OFF \
+    -DLINGUAS="en"
+
+make -j8
+sudo make install
+
+</code>
